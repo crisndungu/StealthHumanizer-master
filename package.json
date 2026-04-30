@@ -1,0 +1,67 @@
+{
+  "name": "stealthhumanizer",
+  "version": "2.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "papers:ingest": "node scripts/papers/ingest-open-access.mjs",
+    "papers:version": "node scripts/papers/version-dataset.mjs",
+    "papers:analyze": "node scripts/papers/analyze-fulltext.mjs",
+    "papers:benchmark": "node scripts/papers/build-benchmark.mjs",
+    "model:train": "node scripts/model/train-framework.mjs",
+    "model:eval": "node scripts/model/evaluate-framework.mjs",
+    "test:integration": "node scripts/tests/integration-smoke.mjs",
+    "test:pr2-integrity": "node scripts/tests/pr2-integrity-schema-check.mjs",
+    "pipeline:complete": "node scripts/tests/complete-e2e.mjs",
+    "pipeline:q1-batch": "node scripts/papers/batch-download-and-train.mjs",
+    "papers:download-few": "node scripts/papers/download-few-open-source.mjs",
+    "test:download-few": "node scripts/tests/download-few-smoke.mjs",
+    "pipeline:q1-ready": "node scripts/papers/complete-ready-pipeline.mjs",
+    "pipeline:q1-ready:skip-install": "node scripts/papers/complete-ready-pipeline.mjs --skip-install"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.8.0",
+    "mammoth": "^1.12.0",
+    "next": "16.2.4",
+    "pdfjs-dist": "^5.6.205",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "recharts": "^2.15.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.2.4",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2"
+  },
+  "description": "Free open-source AI text humanizer with style-aware rewriting",
+  "license": "MIT",
+  "author": "Rudra Sarker <rudrasarker130@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rudra496/StealthHumanizer"
+  },
+  "homepage": "https://stealthhumanizer.vercel.app/",
+  "keywords": [
+    "ai-humanizer",
+    "ai-detector",
+    "text-rewriter",
+    "style-aware",
+    "academic-writing",
+    "nextjs",
+    "open-source"
+  ]
+}
